@@ -1,0 +1,26 @@
+{
+  "name": "shri-home-task-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "watch-css": "gulp watch-css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/batogov/shri-home-task-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/batogov/shri-home-task-1/issues"
+  },
+  "homepage": "https://github.com/batogov/shri-home-task-1#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-watch": "^4.3.11"
+  }
+}
