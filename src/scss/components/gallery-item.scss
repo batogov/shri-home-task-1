@@ -1,0 +1,39 @@
+.gallery-item {
+    padding: 5px;
+
+    flex-grow: 1;
+    overflow: hidden;
+    
+    &__img-wrapper {
+        border-radius: 5px;
+        overflow: hidden;
+        height: 250px;
+        display: flex;
+
+        img {
+            object-fit: cover;
+            min-width: 100%;
+            max-height: 250px;
+        }
+    }
+
+    &:nth-child(1) {
+        flex-basis: 550px;
+    }
+
+    &:nth-child(4) {
+        flex-basis: 460px;
+    }
+}
+
+@media (min-width: 320px) {
+    .gallery-item {
+        padding: 10px;
+    }
+}
+
+// @media (min-width: 768px) {
+//     .gallery-item {
+
+//     }
+// }

@@ -1,0 +1,50 @@
+.info {
+    padding: 10px;
+
+    h1, p {
+        display: block;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-weight: bold;
+        font-size: 1.2rem;
+        line-height: 1.3em;
+    }
+
+    p {
+        font-size: 0.9rem;
+        line-height: 1.5em;
+        padding-top: 15px;
+    }
+}
+
+@media (min-width: 320px) {
+    .info {
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            padding-top: 20px;
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .info {
+        h1 {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .info {
+        h1 {
+            font-size: 2rem;
+        }
+    }
+}
