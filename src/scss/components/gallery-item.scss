@@ -1,9 +1,8 @@
 .gallery-item {
     padding: 5px;
-
     flex-grow: 1;
     overflow: hidden;
-    
+
     &__img-wrapper {
         border-radius: 5px;
         overflow: hidden;
@@ -11,6 +10,7 @@
         display: flex;
 
         img {
+            cursor: pointer;
             object-fit: cover;
             min-width: 100%;
             max-height: 250px;
