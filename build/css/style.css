@@ -6,6 +6,9 @@ html {
 body {
   background-color: #f4f7f9; }
 
+.body-no-scroll {
+  overflow-y: hidden; }
+
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -21,13 +24,28 @@ body {
 
 .footer {
   background-color: #fff;
-  padding: 25px;
+  padding: 10px;
+  font-size: 0.9rem;
   text-align: center;
   margin-top: auto; }
   .footer span {
     line-height: 1.5em; }
     .footer span i {
       color: #ee4f4f; }
+
+@media (min-width: 320px) {
+  .footer {
+    padding: 15px; }
+    .footer span {
+      font-size: 1rem; } }
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 20px; } }
+
+@media (min-width: 1024px) {
+  .footer {
+    padding: 25px; } }
 
 .gallery-item {
   padding: 5px;
@@ -49,10 +67,10 @@ body {
       font-family: 'object-fit: cover;';
       min-width: 100%;
       max-height: 250px; }
-  .gallery-item:nth-child(1) {
+  .gallery-item:nth-child(7n) {
     -ms-flex-preferred-size: 550px;
         flex-basis: 550px; }
-  .gallery-item:nth-child(4) {
+  .gallery-item:nth-child(4n) {
     -ms-flex-preferred-size: 460px;
         flex-basis: 460px; }
 
@@ -76,7 +94,7 @@ body {
 
 @media (min-width: 320px) {
   .gallery {
-    padding: 10px 10px 25px 10px; } }
+    padding: 10px 10px 20px 10px; } }
 
 @media (min-width: 768px) {
   .gallery {
@@ -95,24 +113,32 @@ body {
   .info p {
     font-size: 0.9rem;
     line-height: 1.5em;
-    padding-top: 15px; }
+    padding-top: 10px; }
 
 @media (min-width: 320px) {
   .info {
     padding: 35px 15px 15px 15px; }
     .info h1 {
-      font-size: 1.5rem; }
+      font-size: 1.25rem; }
     .info p {
-      padding-top: 20px;
+      padding-top: 15px;
       font-size: 1rem; } }
 
 @media (min-width: 768px) {
   .info h1 {
-    font-size: 1.8rem; } }
+    font-size: 1.6rem; }
+  .info p {
+    padding-top: 20px; } }
 
 @media (min-width: 1024px) {
   .info h1 {
     font-size: 2rem; } }
+
+@media (min-width: 1600px) {
+  .info h1 {
+    font-size: 2.2rem; }
+  .info p {
+    font-size: 1.2rem; } }
 
 .popup {
   position: fixed;
@@ -132,11 +158,15 @@ body {
     max-height: 90vh;
     max-width: 90%;
     position: relative; }
-  .popup img {
+  .popup__img {
     max-height: 90vh;
     max-width: 100%;
     border-radius: 5px;
-    box-shadow: 0px 10px 35px 0px rgba(0, 0, 0, 0.15); }
+    box-shadow: 0px 10px 35px 0px rgba(0, 0, 0, 0.15);
+    -webkit-animation: fadeIn 0.15s normal linear;
+            animation: fadeIn 0.15s normal linear; }
+    .popup__img--hidden {
+      display: none; }
   .popup__back {
     z-index: -1;
     position: absolute;
@@ -148,21 +178,88 @@ body {
   .popup__close {
     cursor: pointer;
     position: absolute;
-    right: 15px;
-    top: 5px;
-    font-size: 35px;
-    color: #fff; }
+    right: 10px;
+    top: 10px;
+    width: 25px;
+    height: 25px;
+    overflow: hidden; }
+    .popup__close::before, .popup__close::after {
+      content: '';
+      position: absolute;
+      height: 0.25rem;
+      margin-top: -0.125rem;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      background: #fff; }
+    .popup__close::before {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg); }
+    .popup__close::after {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg); }
   .popup--hidden {
     display: none; }
 
 @media (min-width: 320px) {
   .popup__close {
-    right: 20px;
-    top: 10px;
-    font-size: 40px; } }
+    right: 15px;
+    top: 15px;
+    width: 30px;
+    height: 30px; } }
 
 @media (min-width: 768px) {
   .popup__close {
-    right: 25px;
-    top: 15px;
-    font-size: 45px; } }
+    right: 20px;
+    top: 20px;
+    width: 35px;
+    height: 35px; } }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.spinner {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  border: 0.25rem solid rgba(255, 255, 255, 0.2);
+  border-top-color: white;
+  -webkit-animation: spin 1s infinite linear;
+          animation: spin 1s infinite linear; }
+  .spinner--hidden {
+    display: none; }
+
+@media (min-width: 320px) {
+  .spinner {
+    width: 30px;
+    height: 30px; } }
+
+@media (min-width: 768px) {
+  .spinner {
+    width: 35px;
+    height: 35px; } }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }

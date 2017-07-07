@@ -1,6 +1,7 @@
 .footer {
     background-color: #fff;
-    padding: 25px;
+    padding: 10px;
+    font-size: 0.9rem;
     text-align: center;
     margin-top: auto;
 
@@ -10,5 +11,27 @@
         i {
             color: #ee4f4f;
         }
+    }
+}
+
+@media (min-width: 320px) {
+    .footer {
+        padding: 15px;
+
+        span {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .footer {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer {
+        padding: 25px;
     }
 }

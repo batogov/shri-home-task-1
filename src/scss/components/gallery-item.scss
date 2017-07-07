@@ -18,11 +18,11 @@
         }
     }
 
-    &:nth-child(1) {
+    &:nth-child(7n) {
         flex-basis: 550px;
     }
 
-    &:nth-child(4) {
+    &:nth-child(4n) {
         flex-basis: 460px;
     }
 }

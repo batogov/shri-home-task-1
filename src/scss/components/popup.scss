@@ -1,5 +1,4 @@
 .popup {
-
     position: fixed;
     top: 0;
     bottom: 0;
@@ -15,11 +14,16 @@
         position: relative;
     }
 
-    img {
+    &__img {
         max-height: 90vh;
         max-width: 100%;
         border-radius: 5px;
         box-shadow: 0px 10px 35px 0px rgba(0, 0, 0, 0.15);
+        animation: fadeIn 0.15s normal linear;
+
+        &--hidden {
+            display: none;
+        }
     }
 
     &__back {
@@ -35,24 +39,44 @@
     &__close {
         cursor: pointer;
         position: absolute;
-        right: 15px;
-        top: 5px;
-        font-size: 35px;
-        color: #fff;
+        right: 10px;
+        top: 10px;
+        width: 25px;
+        height: 25px;
+        overflow: hidden;
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            height: 0.25rem;
+            margin-top: -0.125rem;
+            width: 100%;
+            top: 50%;
+            left: 0;
+            background: #fff;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
     }
 
     &--hidden {
         display: none;
     }
-
 }
 
 @media (min-width: 320px) {
     .popup {
         &__close {
-            right: 20px;
-            top: 10px;
-            font-size: 40px;
+            right: 15px;
+            top: 15px;
+            width: 30px;
+            height: 30px;
         }
     }
 }
@@ -60,9 +84,20 @@
 @media (min-width: 768px) {
     .popup {
         &__close {
-            right: 25px;
-            top: 15px;
-            font-size: 45px;
+            right: 20px;
+            top: 20px;
+            width: 35px;
+            height: 35px;
         }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
