@@ -12,6 +12,7 @@
         img {
             cursor: pointer;
             object-fit: cover;
+            font-family: 'object-fit: cover;';
             min-width: 100%;
             max-height: 250px;
         }
@@ -28,12 +29,12 @@
 
 @media (min-width: 320px) {
     .gallery-item {
-        padding: 10px;
+        padding: 5px;
     }
 }
 
-// @media (min-width: 768px) {
-//     .gallery-item {
-
-//     }
-// }
+@media (min-width: 768px) {
+    .gallery {
+        padding: 10px;
+    }
+}

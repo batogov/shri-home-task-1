@@ -1,4 +1,17 @@
 .gallery {
+    padding: 5px 5px 15px 5px;
     display: flex;
     flex-flow: row wrap;
+}
+
+@media (min-width: 320px) {
+    .gallery {
+        padding: 10px 10px 25px 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .gallery {
+        padding: 15px 15px 35px 15px;
+    }
 }

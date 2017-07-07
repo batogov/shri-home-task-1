@@ -8,7 +8,7 @@ function onImageClick(event) {
     event.preventDefault();
     
     var image = document.createElement('img');
-    image.src = 'img/' + this.dataset.img;
+    image.src = 'static/img/' + this.dataset.img;
     
     imageWrapper.appendChild(image);
     popup.classList.remove('popup--hidden');
@@ -27,3 +27,7 @@ images.forEach(function(image) {
 
 popupBack.addEventListener('click', closePopup);
 popupClose.addEventListener('click', closePopup);
+
+document.addEventListener("DOMContentLoaded", function() {
+    objectFitImages();
+});

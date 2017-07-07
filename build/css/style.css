@@ -4,7 +4,9 @@ html {
   color: #323b43; }
 
 body {
-  background-color: #f4f7f9;
+  background-color: #f4f7f9; }
+
+.container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,21 +19,11 @@ body {
           justify-content: space-between;
   min-height: 100vh; }
 
-.container {
-  padding: 5px; }
-
-@media (min-width: 320px) {
-  .container {
-    padding: 10px; } }
-
-@media (min-width: 768px) {
-  .container {
-    padding: 15px; } }
-
 .footer {
   background-color: #fff;
   padding: 25px;
-  text-align: center; }
+  text-align: center;
+  margin-top: auto; }
   .footer span {
     line-height: 1.5em; }
     .footer span i {
@@ -54,6 +46,7 @@ body {
       cursor: pointer;
       -o-object-fit: cover;
          object-fit: cover;
+      font-family: 'object-fit: cover;';
       min-width: 100%;
       max-height: 250px; }
   .gallery-item:nth-child(1) {
@@ -65,9 +58,14 @@ body {
 
 @media (min-width: 320px) {
   .gallery-item {
+    padding: 5px; } }
+
+@media (min-width: 768px) {
+  .gallery {
     padding: 10px; } }
 
 .gallery {
+  padding: 5px 5px 15px 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -76,8 +74,16 @@ body {
       -ms-flex-flow: row wrap;
           flex-flow: row wrap; }
 
+@media (min-width: 320px) {
+  .gallery {
+    padding: 10px 10px 25px 10px; } }
+
+@media (min-width: 768px) {
+  .gallery {
+    padding: 15px 15px 35px 15px; } }
+
 .info {
-  padding: 10px; }
+  padding: 20px 10px 10px 10px; }
   .info h1, .info p {
     display: block;
     max-width: 600px;
@@ -92,11 +98,13 @@ body {
     padding-top: 15px; }
 
 @media (min-width: 320px) {
-  .info h1 {
-    font-size: 1.5rem; }
-  .info p {
-    padding-top: 20px;
-    font-size: 1rem; } }
+  .info {
+    padding: 35px 15px 15px 15px; }
+    .info h1 {
+      font-size: 1.5rem; }
+    .info p {
+      padding-top: 20px;
+      font-size: 1rem; } }
 
 @media (min-width: 768px) {
   .info h1 {
@@ -127,12 +135,14 @@ body {
   .popup img {
     max-height: 90vh;
     max-width: 100%;
-    border-radius: 5px; }
+    border-radius: 5px;
+    box-shadow: 0px 10px 35px 0px rgba(0, 0, 0, 0.15); }
   .popup__back {
     z-index: -1;
     position: absolute;
     top: 0;
     bottom: 0;
+    left: 0;
     width: 100%;
     background-color: rgba(50, 59, 67, 0.8); }
   .popup__close {

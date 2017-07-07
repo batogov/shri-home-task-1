@@ -1,15 +1,6 @@
 .container {
-    padding: 5px;
-}
-
-@media (min-width: 320px) {
-    .container {
-        padding: 10px;
-    }
-}
-
-@media (min-width: 768px) {
-    .container {
-        padding: 15px;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
