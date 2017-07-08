@@ -5,7 +5,8 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var watch = require('gulp-watch');
 var browserSync = require("browser-sync");
-var reload = browserSync.reload;
+var dotenv = require('dotenv').config({ path: '.env' });
+var tinyPNG = require('gulp-tinypng');
 
 var config = {
     server: {
@@ -32,4 +33,10 @@ gulp.task('watch-css', function() {
     gulp.watch('./src/scss/**/*.scss', ['build-css']);
 });
 
-gulp.task("watch", ["connect", "watch-css"]);
+gulp.task('compress-images', function() {
+    gulp.src('./src/img/**/*.{jpg,jpeg}')
+        .pipe(tinyPNG(process.env.TINYPNG_API_KEY))
+        .pipe(gulp.dest('./build/img'));
+});
+
+gulp.task("main", ["connect", "watch-css"]);

@@ -4,7 +4,8 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "watch": "gulp watch"
+    "main": "gulp main",
+    "compress-images": "gulp compress-images"
   },
   "repository": {
     "type": "git",
@@ -18,18 +19,12 @@
   },
   "homepage": "https://github.com/batogov/shri-home-task-1#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
     "browser-sync": "^2.18.6",
+    "dotenv": "^4.0.0",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
-    "gulp-clean": "^0.3.2",
-    "gulp-clean-css": "^2.3.2",
-    "gulp-if": "^2.0.2",
-    "gulp-imagemin": "^3.1.1",
-    "gulp-rigger": "^0.5.8",
     "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^2.0.0",
-    "gulp-useref": "^3.1.2",
-    "gulp-watch": "^4.3.11",
-    "imagemin-pngquant": "^5.0.0"
+    "gulp-tinypng": "^1.0.2",
+    "gulp-watch": "^4.3.11"
   }
 }

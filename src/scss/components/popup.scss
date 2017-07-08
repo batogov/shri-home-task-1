@@ -9,6 +9,7 @@
     align-items: center;
 
     &__img-wrapper {
+        z-index: 2;
         max-height: 90vh;
         max-width: 90%;
         position: relative;
@@ -27,7 +28,7 @@
     }
 
     &__back {
-        z-index: -1;
+        z-index: 1;
         position: absolute;
         top: 0;
         bottom: 0;
@@ -37,6 +38,7 @@
     }
 
     &__close {
+        z-index: 2;
         cursor: pointer;
         position: absolute;
         right: 10px;
